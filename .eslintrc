@@ -14,8 +14,10 @@
     },
     "sourceType": "module"
   },
-  "plugins": [],
+  "plugins": ["graphql"],
   "rules": {
+    "import/no-extraneous-dependencies": ["enabled", "never"],
+    "import/no-unresolved": ["enabled", "never"],
     "linebreak-style": ["error", "unix"],
     "max-len": ["error", { "code": 120 }],
     "no-constant-condition": "warn",

@@ -9,13 +9,13 @@ const typeDefs = `
 const resolvers = {
   Query: {
     hello() {
-      return 'hello world'
-    }
-  }
+      return `hello world`
+    },
+  },
 }
 const schema = makeExecutableSchema({
   typeDefs,
-  resolvers
+  resolvers,
 })
 
 createApolloServer({ schema })

@@ -10,7 +10,7 @@ import App from '../../ui/App'
 
 /* connect server environment to Apollo client */
 const httpLink = new HttpLink({
-  uri: Meteor.absoluteUrl('graphql')
+  uri: Meteor.absoluteUrl(`graphql`),
 })
 
 /* set up Apollo caching */
@@ -19,7 +19,7 @@ const cache = new InMemoryCache()
 /* start Apollo client */
 const client = new ApolloClient({
   link: httpLink,
-  cache
+  cache,
 })
 
 /* set up redux i mean apollo with React */
@@ -30,5 +30,5 @@ const ApolloApp = () => (
 )
 
 Meteor.startup(() => {
-  render(<ApolloApp />, document.getElementById('app'))
+  render(<ApolloApp />, document.getElementById(`app`))
 })
