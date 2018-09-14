@@ -1,0 +1,10 @@
+# eslint-disable
+
+# name
+# createdAt
+# [todoId]
+
+type Resolutions {
+  _id: String! # private, required
+  name: String! # reqiored
+}

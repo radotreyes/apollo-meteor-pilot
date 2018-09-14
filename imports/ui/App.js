@@ -1,5 +1,16 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import gql from 'graphql-tag'
+import { graphql } from 'react-apollo'
 
-const App = () => <h1>All set up!</h1>
+const App = ({ data }) => <h1>{data.hello}</h1>
+App.propTypes = {
+  data: PropTypes.object.isRequired,
+}
 
-export default App
+const RootQuery = gql`
+  {
+    hello
+  }
+`
+export default graphql(RootQuery)(App)
