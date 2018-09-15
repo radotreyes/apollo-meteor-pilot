@@ -4,7 +4,7 @@
 # createdAt
 # [todoId]
 
-type Resolutions {
+type Resolution {
   _id: String! # private, required
   name: String! # reqiored
 }
