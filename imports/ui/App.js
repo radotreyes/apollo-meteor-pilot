@@ -1,8 +1,11 @@
 /* eslint-disable no-underscore-dangle */
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
+
+import Home from './components/Home'
 
 class App extends Component {
   static propTypes = {
@@ -12,15 +15,11 @@ class App extends Component {
   render() {
     const { data } = this.props
     return (
-      <Fragment>
-        <h1>{data.hello}</h1>
-        <ul>
-          {!data.loading
-            && data.resolutions.map(resolution => (
-              <li key={resolution._id}>{resolution.name}</li>
-            ))}
-        </ul>
-      </Fragment>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" render={() => <Home data={data} />} />
+        </Switch>
+      </BrowserRouter>
     )
   }
 }

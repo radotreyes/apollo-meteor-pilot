@@ -21,6 +21,7 @@
     "linebreak-style": ["error", "unix"],
     "max-len": ["error", { "code": 120 }],
     "no-constant-condition": "warn",
+    "no-underscore-dangle": "off",
     "no-unused-vars": "warn",
     "quotes": ["error", "backtick", { "allowTemplateLiterals": true }],
     "react/forbid-prop-types": ["enabled", "never"],

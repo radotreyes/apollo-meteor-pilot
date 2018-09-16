@@ -2,7 +2,7 @@ import Resolutions from './Resolutions'
 
 /* this adds to the DB, don't duplicate anything! */
 // Resolutions.insert({
-//   name: `another resolution`,
+//   name: `another resolution`
 // })
 
 export default {
