@@ -8,3 +8,7 @@ type Resolution {
   _id: String! # private, required
   name: String! # reqiored
 }
+
+type Mutation {
+  createResolution: Resolution
+}
