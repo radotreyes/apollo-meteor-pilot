@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 
 import ResolutionForm from './ResolutionForm'
 
-const Home = ({ data }) => (
+const Home = ({ data: { hello, loading, resolutions } }) => (
   <Fragment>
-    <h1>{data.hello}</h1>
+    <h1>{hello}</h1>
     <ResolutionForm />
     <ul>
-      {!data.loading
-        && data.resolutions.map(resolution => (
+      {!loading
+        && resolutions.map(resolution => (
           <li key={resolution._id}>{resolution.name}</li>
         ))}
     </ul>

@@ -10,5 +10,5 @@ type Resolution {
 }
 
 type Mutation {
-  createResolution: Resolution
+  createResolution(name: String!): Resolution
 }

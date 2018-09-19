@@ -12,7 +12,7 @@ const HelloWorldSchema = `
     resolutions: [Resolution]
   }
 `
-
+// hi
 /* combine typeDefs */
 const typeDefs = [HelloWorldSchema, ResolutionsSchema]
 

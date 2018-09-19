@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import gql from 'graphql-tag'
 import { graphql } from 'react-apollo'
 
-const createResolution = gql`
-  mutation createResolution {
-    createResolution {
+const ResolutionMutation = gql`
+  mutation createResolution($name: String!) {
+    createResolution(name: $name) {
       _id
       name
     }
@@ -28,8 +28,15 @@ class ResolutionForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     const { input } = this.state
+    const { createResolution } = this.props
     // eslint-disable-next-line
-    this.props.createResolution()
+    createResolution({
+      variables: {
+        name: input,
+      },
+    })
+      // .then(({ data }) => refetch(data))
+      .catch(error => console.log(error))
     this.setState({
       input: ``,
     })
@@ -38,14 +45,22 @@ class ResolutionForm extends Component {
   render() {
     const { input } = this.state
     return (
-      <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
-        <input type="text" value={input} />
+      <form onSubmit={this.handleSubmit}>
+        <input
+          type="text"
+          name="name"
+          onChange={this.handleChange}
+          value={input}
+        />
         <input type="submit" value="Submit" />
       </form>
     )
   }
 }
 
-export default graphql(createResolution, {
+export default graphql(ResolutionMutation, {
   name: `createResolution`,
+  options: {
+    refetchQueries: [`RootQuery`],
+  },
 })(ResolutionForm)

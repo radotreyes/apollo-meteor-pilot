@@ -24,7 +24,7 @@ class App extends Component {
 }
 
 const RootQuery = gql`
-  {
+  query RootQuery {
     hello
     resolutions {
       _id
