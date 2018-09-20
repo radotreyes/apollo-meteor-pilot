@@ -1,0 +1,15 @@
+# eslint-disable
+
+# email
+# password
+# [userId]
+
+type User {
+  _id: String!
+  email: String! # private, required
+  password: String! # reqiored
+}
+
+extend type Mutation {
+  registerUser(email: String!, password: String!): User
+}

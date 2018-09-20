@@ -4,7 +4,9 @@ import merge from 'lodash/merge'
 
 import ResolutionsSchema from '../../api/resolutions/Resolutions.graphql'
 import ResolutionsResolvers from '../../api/resolutions/resolvers'
-// hi
+// import UsersSchema from '../../api/users/Users.graphql'
+// import UsersResolvers from '../../api/users/resolvers'
+
 /* any other individual schemas */
 const HelloWorldSchema = `
   type Query {
@@ -12,9 +14,9 @@ const HelloWorldSchema = `
     resolutions: [Resolution]
   }
 `
-// hi
+//
 /* combine typeDefs */
-const typeDefs = [HelloWorldSchema, ResolutionsSchema]
+const typeDefs = merge([HelloWorldSchema, ResolutionsSchema])
 
 /* combine resolvers */
 const HiResolvers = {
